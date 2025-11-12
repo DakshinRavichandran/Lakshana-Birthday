@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Happy Birthday Lakshana!</title>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      color: #333;
+      overflow-x: hidden;
+    }
+    .container {
+      padding: 60px 20px;
+      position: relative;
+      z-index: 2;
+    }
+    h1 {
+      color: #ff4081;
+      font-size: 3em;
+      margin-bottom: 10px;
+    }
+    h2 {
+      color: #ff66b2;
+      font-size: 1.8em;
+      margin-bottom: 5px;
+      font-style: italic;
+    }
+    h3 {
+      color: #ff80c0;
+      font-size: 1.5em;
+      margin-bottom: 30px;
+      font-weight: normal;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+      gap: 20px;
+      max-width: 1000px;
+      margin: 0 auto 40px;
+    }
+    .gallery img {
+      width: 100%;
+      height: auto;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease;
+    }
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+    .iframe-wrapper {
+      position: relative;
+      width: 100%;
+      max-width: 560px;
+      height: 315px;
+      margin: 0 auto 40px;
+    }
+    .iframe-wrapper iframe {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+    p {
+      font-size: 1.2em;
+      margin-top: 20px;
+    }
+
+    /* Floating hearts and balloons */
+    .floating {
+      position: fixed;
+      bottom: -100px;
+      animation: floatUp 10s linear infinite;
+      opacity: 0.8;
+      z-index: 1;
+    }
+
+    @keyframes floatUp {
+      0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0.9;
+      }
+      100% {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+    @media (max-width: 600px) {
+      h1 { font-size: 2.2em; }
+      h2 { font-size: 1.4em; }
+      h3 { font-size: 1.2em; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Happy Birthday Lakshana!</h1>
+    <h2>Happie Birthday Diva 💖</h2>
+    <h3>Love ya 💞</h3>
+
+    <div class="gallery">
+      <img src="photo1.jpg" alt="Lakshana photo 1">
+      <img src="photo2.jpg" alt="Lakshana photo 2">
+      <img src="photo3.jpg" alt="Lakshana photo 3">
+      <!-- Add more photos if you like -->
+    </div>
+
+    <div class="iframe-wrapper">
+      <iframe 
+        src="https://www.youtube.com/embed/--h39PndY7s?start=30&autoplay=1&mute=0&loop=1&playlist=--h39PndY7s" 
+        allow="autoplay; encrypted-media" 
+        allowfullscreen>
+      </iframe>
+    </div>
+
+    <p>Wishing you a day filled with love, laughter, and joy.<br>
+       May all your dreams come true today and always!</p>
+  </div>
+
+  <!-- Balloons and hearts animation -->
+  <script>
+    const emojis = ['🎈','🎈','💖','💞','🎉','💗','🎈','💓'];
+    function createFloatingEmoji() {
+      const emoji = document.createElement('div');
+      emoji.classList.add('floating');
+      emoji.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+      emoji.style.left = Math.random() * 100 + 'vw';
+      emoji.style.fontSize = Math.random() * 40 + 20 + 'px';
+      emoji.style.animationDuration = 6 + Math.random() * 5 + 's';
+      document.body.appendChild(emoji);
+      setTimeout(() => { emoji.remove(); }, 10000);
+    }
+    setInterval(createFloatingEmoji, 700);
+  </script>
+</body>
+</html>
